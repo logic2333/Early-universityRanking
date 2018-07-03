@@ -53,19 +53,19 @@ def calcSchool(IDSchool):
     while True:
         cur2.execute("SELECT \"Weight\" FROM \"Subject\" WHERE \"ID\" = (%s)", (IDSubject, ))
         weight = cur2.fetchone()[0]
-        if IDSubject < 700:     # ��
+        if IDSubject < 700:     # 文
             res[2] += weight * f[grade]
-        elif IDSubject < 800:   # ��
+        elif IDSubject < 800:   # 理
             res[3] += weight * f[grade]
-        elif IDSubject < 900:   # ��
+        elif IDSubject < 900:   # 工
             res[4] += weight * f[grade]
-        elif IDSubject < 1000:  # ũ
+        elif IDSubject < 1000:  # 农
             res[6] += weight * f[grade]
-        elif IDSubject < 1100:  # ҽ
+        elif IDSubject < 1100:  # 医
             res[5] += weight * f[grade]
-        elif IDSubject < 1300:  # ��
+        elif IDSubject < 1300:  # 管
             res[7] += weight * f[grade]
-        else:                   # ��
+        else:                   # 艺
             res[8] += weight * f[grade]
         a = cur.fetchone()
         if a is None:
